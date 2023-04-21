@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
-
+import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -22,12 +22,13 @@ import org.openqa.selenium.chrome.ChromeOptions;
 public class App 
 {
 	
+	@Test
     public static void main( String[] args ) throws InterruptedException, IOException
     {
         
-    	System.setProperty("webdriver.chrome.driver","/Users/shubham/Documents/Softwares/chrome-driver/chromedriver");
+    	//System.setProperty("webdriver.chrome.driver","/Users/shubham/Documents/Softwares/chrome-driver/chromedriver");
     	//System.setProperty("webdriver.chrome.driver", "/home/ubuntu/chromedriver");
-    	//System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+    	System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
     	ChromeOptions chromeOptions = new ChromeOptions();
     	chromeOptions.addArguments("--headless");
 		//chromeOptions.addArguments("--no-sandbox");
@@ -39,7 +40,7 @@ public class App
     	System.out.println("Selenium test scripts execution started...");
     	
     	//open browser and hit url
-    	driver.get("http://18.233.9.160:8081/addressbook");
+    	driver.get("http://34.227.27.254:8081/addressbook");
     	
     	driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
     	
